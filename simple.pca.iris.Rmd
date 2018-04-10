@@ -1,0 +1,27 @@
+---
+title: "PCA_iris"
+author: "Jordan Hoehne"
+date: "4/9/2018"
+output: word_document
+---
+
+```{r}
+#load data
+iris<-iris
+```
+
+```{r}
+#matrix of scatterplots
+pairs(iris[, -5], col = iris[, 5], pch = 19)
+```
+
+```{r}
+irispca<-princomp(iris[-5])
+summary(irispca)
+```
+The variance of the data is seen in the cumulative proportion under each component. Thus, the first component can explain 92.4% of the variance and for each component after, more of the variance is explained.
+
+```{r}
+#extract factors in pca
+irispca$loadings
+```
